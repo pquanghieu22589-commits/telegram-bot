@@ -73,4 +73,4 @@ app.add_handler(CommandHandler("reset", reset))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply))
 
 print("Bot đang chạy... Bấm Ctrl+C để dừng")
-app.run_polling()
+loop.run_until_complete(app.run_polling())
