@@ -11,7 +11,11 @@ from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, fil
 from groq import Groq
 
 # Config
-GROQ_KEY = "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"  # Groq key của mày
+import os
+GROQ_KEY = os.environ.get("GROQ_API_KEY")
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+
+GROQ_KEY = " "  # Groq key của mày
 TELEGRAM_TOKEN = "8801419933:AAG7ayi-f7i2mnVvAnqGCFdmFnAsAPDCAR0"       # Token từ BotFather
 client = Groq(api_key=GROQ_KEY)
 
