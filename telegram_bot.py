@@ -2,7 +2,14 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, filters, ContextTypes
 from groq import Groq
+import asyncio
+import sys
 
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 # Config
 GROQ_KEY = "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"  # Groq key của mày
 TELEGRAM_TOKEN = "8801419933:AAG7ayi-f7i2mnVvAnqGCFdmFnAsAPDCAR0"       # Token từ BotFather
